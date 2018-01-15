@@ -14,10 +14,10 @@ echo "This is WIP (work in progress). Pre-beta version (v 0.3)"
 echo "WARNING! This script checks mostly NOTHING. If you made a mistake,"
 echo "fix it manually, or re-run the script."
 echo 
-echo "Cloning git repo, please wait... Saving repo into 'cryptogenerator' folder"
 
-git clone https://github.com/sxiii/cryptogenerator
-cd cryptogenerator
+# echo "Cloning git repo, please wait... Saving repo into 'cryptogenerator' folder"
+# git clone https://github.com/sxiii/cryptogenerator
+# cd cryptogenerator
 
 echo "= NAME ="
 echo "Please enter the name of the crypto! No special symbols, spaces etc."
