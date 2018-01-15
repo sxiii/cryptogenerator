@@ -1,6 +1,8 @@
 # Cryptogenerator
 This script helps you create own cryptocurrency. It asks you several questions, you answer, and here it is! Easy as 1-2-3 and fast (takes approx. 3 minutes on decent hardware).
 
+[![asciicast](https://asciinema.org/a/157053.png)](https://asciinema.org/a/157053)
+
 ## About this repository
 This is two-way repo - it both contains:
 * cryptonote reference implementation (improved by karbowanec team)
