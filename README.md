@@ -20,9 +20,10 @@ You will also need up to 100 megabytes of free space.
 0) Install git, if you don't have it `sudo apt install git`
 1) Clone this repo with: `git clone https://github.com/sxiii/cryptogenerator`
 2) Enter the folder with script: `cd cryptogenerator`
-3) Run the cool, semi-automatic script: `./cryptogenerator.sh`
-4) Answer 7 questions one-at-a-time.
-5) Wait few minutes, and... Done! Your crypto is laying at ./cryptogenerator/build/release/src
+3) Make the script executable: `chmod +x cryptogenerator.sh`
+4) Run the cool, semi-automatic script: `./cryptogenerator.sh`
+5) Answer 7 questions one-at-a-time. After each question (answer) press enter.
+6) Wait few minutes, and... Done! Your crypto is laying at ./cryptogenerator/build/release/src
 
 ## Resulting binaries
 Please go to ./cryptogenerator/build/release/src location to find your binaries.
