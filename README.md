@@ -25,7 +25,7 @@ You will also need up to 100 megabytes of free space.
 3) Make the script executable: `chmod +x cryptogenerator.sh`
 4) Run the cool, semi-automatic script: `./cryptogenerator.sh`
 5) Answer 7 questions one-at-a-time. After each question (answer) press enter.
-6) Wait few minutes, and... Done! Your crypto is laying at ./cryptogenerator/build/release/src
+6) Wait few minutes, and... Done! Your crypto is laying at ./build/release/src
 
 ## Resulting binaries
 Please go to ./cryptogenerator/build/release/src location to find your binaries.
