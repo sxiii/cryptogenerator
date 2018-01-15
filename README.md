@@ -1,7 +1,7 @@
 # Cryptogenerator
 This script helps you create own cryptocurrency. It asks you several questions, you answer, and here it is! Easy as 1-2-3 and fast (takes approx. 3 minutes on decent hardware).
 
-[![asciicast](https://asciinema.org/a/157053.png)](https://asciinema.org/a/157053)
+![Img](http://i.imgur.com/ZxmVyJz.png)
 
 ## About this repository
 This is two-way repo - it both contains:
@@ -35,6 +35,9 @@ Now you can use the following programs:
 * simplewallet - wallet program (cli interface)
 * walletd - wallet daemon
 * miner - to mine your new coins
+
+# Asciicast (script work demo)
+[![asciicast](https://asciinema.org/a/157053.png)](https://asciinema.org/a/157053)
 
 ## Framework used
 CryptoNote framework, improved by karbowanec team.
