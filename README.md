@@ -1,71 +1,46 @@
-The Karbo (Karbovanets) is cryptocurrency of Ukrainian origin, just like Bitcoin but more anonymous and privacy centric with opaque and more analysis resistant blockchain. It is people's electronic cash, not connected to government or officials.
+# Cryptogenerator
+This script helps you create own cryptocurrency. It asks you several questions, you answer, and here it is! Easy as 1-2-3 and fast (takes approx. 3 minutes on decent hardware).
 
-## Building Karbo 
+## About this repository
+This is two-way repo - it both contains:
+* cryptonote reference implementation (improved by karbowanec team)
+* script, that asks you several questions (7, actually) and compiles your own cryptocurrency
 
-### On *nix
+## Requirements (just get ubuntu!)
+Requirements are automatically installed by the script, *if you use ubuntu*. If not, please install the following: git, curl, sed, cmake, libboost-all-dev. For instance, you can do it manually like this in ArchLinux: `sudo pacman -S git curl sed cmake libboost-all-dev`.
 
-Dependencies: GCC 4.7.3 or later, CMake 2.8.6 or later, and Boost 1.55.
+The script works perfect (tested) on the following software config:
+* Ubuntu 16.04.3 LTS (xenial)
+* Linux mainframe 4.10.0-42-generic #46~16.04.1-Ubuntu SMP Mon Dec 4 15:57:59 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
+* LSB Version:	core-9.20160110ubuntu0.2-amd64:core-9.20160110ubuntu0.2-noarch:printing-9.20160110ubuntu0.2-amd64:printing-9.20160110ubuntu0.2-noarch:security-9.20160110ubuntu0.2-amd64:security-9.20160110ubuntu0.2-noarch
 
-You may download them from:
+You will also need up to 100 megabytes of free space.
 
-* http://gcc.gnu.org/
-* http://www.cmake.org/
-* http://www.boost.org/
-* Alternatively, it may be possible to install them using a package manager.
+## How to work with this repo
+0) Install git, if you don't have it `sudo apt install git`
+1) Clone this repo with: `git clone https://github.com/sxiii/cryptogenerator`
+2) Enter the folder with script: `cd cryptogenerator`
+3) Run the cool, semi-automatic script: `./cryptogenerator.sh`
+4) Answer 7 questions one-at-a-time.
+5) Wait few minutes, and... Done! Your crypto is laying at ./cryptogenerator/build/release/src
 
-To build, change to a directory where this file is located, and run `make`. The resulting executables can be found in `build/release/src`.
+## Resulting binaries
+Please go to ./cryptogenerator/build/release/src location to find your binaries.
 
-**Advanced options:**
+Now you can use the following programs:
+* coinname - your coin is your main app to start interacting with new coins
+* simplewallet - wallet program (cli interface)
+* walletd - wallet daemon
+* miner - to mine your new coins
 
-* Parallel build: run `make -j<number of threads>` instead of `make`.
-* Debug build: run `make build-debug`.
-* Test suite: run `make test-release` to run tests in addition to building. Running `make test-debug` will do the same to the debug version.
-* Building with Clang: it may be possible to use Clang instead of GCC, but this may not work everywhere. To build, run `export CC=clang CXX=clang++` before running `make`.
+## Framework used
+CryptoNote framework, improved by karbowanec team.
 
-### On Windows
-Dependencies: MSVC 2013 or later, CMake 2.8.6 or later, and Boost 1.55. You may download them from:
+## We're hiring
+If you can help this project to develop, please, do so. I created this repo for collaborative work so everybody who founds any issues or errors could interact with this project to get fast fixing.
 
-* http://www.microsoft.com/
-* http://www.cmake.org/
-* http://www.boost.org/
-
-To build, change to a directory where this file is located, and run theas commands: 
-```
-mkdir build
-cd build
-cmake -G "Visual Studio 12 Win64" ..
-```
-
-And then do Build.
-Good luck!
-
-### Building for Android on Linux
-
-Set up the 32 bit toolchain
-Download and extract the Android SDK and NDK
-```
-android-ndk-r15c/build/tools/make_standalone_toolchain.py --api 21 --stl=libc++ --arch arm --install-dir /opt/android/tool32
-```
-
-Download and setup the Boost 1.65.1 source
-```
-wget https://sourceforge.net/projects/boost/files/boost/1.65.1/boost_1_65_1.tar.bz2/download -O boost_1_65_1.tar.bz2
-tar xjf boost_1_65_1.tar.bz2
-cd boost_1_65_1
-./bootstrap.sh
-```
-apply patch from external/boost1_65_1/libs/filesystem/src
-
-Build Boost with the 32 bit toolchain
-```
-export PATH=/opt/android/tool32/arm-linux-androideabi/bin:/opt/android/tool32/bin:$PATH
-./b2 abi=aapcs architecture=arm binary-format=elf address-model=32 link=static runtime-link=static --with-chrono --with-date_time --with-filesystem --with-program_options --with-regex --with-serialization --with-system --with-thread --with-context --with-coroutine --with-atomic --build-dir=android32 --stagedir=android32 toolset=clang threading=multi threadapi=pthread target-os=android --reconfigure stage
-```
-
-Build Karbo for 32 bit Android
-```
-mkdir -p build/release.android32
-cd build/release.android32
-CC=clang CXX=clang++ cmake -D BUILD_TESTS=OFF -D ARCH="armv7-a" -ldl -D STATIC=ON -D BUILD_64=OFF -D CMAKE_BUILD_TYPE=release -D ANDROID=true -D BUILD_TAG="android" -D BOOST_ROOT=/opt/android/boost_1_65_1 -D BOOST_LIBRARYDIR=/opt/android/boost_1_65_1/android32/lib -D CMAKE_POSITION_INDEPENDENT_CODE:BOOL=true -D BOOST_IGNORE_SYSTEM_PATHS_DEFAULT=ON ../..
-make SimpleWallet
-```
+## Current tasks
+* Make this script more flexible with different set-up levels: newbie, pro, expert
+* Testing, issues and bug-reports: get the community feedback to see if it's useful
+* Test & fully check that script supports archlinux/manjaro
+* In the later future - let this script build coins based on different crypto-frameworks (not only cryptonote)
